@@ -1,0 +1,91 @@
+## Descripción 
+La empresa cuenta con un histórico de ventas de los años 2023 a 2025.
+El objetivo del análisis es entender el comportamiento de las ventas,identificar productos y clientes clave, analizar rentabilidad y proponerrecomendaciones basadas en datos.
+
+## Tecnologías utilizadas
+
+PostgreSQL
+SQL (joins, subqueries, CTEs, views, materialized views, índices, EXPLAIN ANALYZE)
+Python (pandas, matplotlib, SQLAlchemy)
+DBeaver (gestión y ejecución de consultas SQL)
+
+##Objetivos del análisis
+
+-Analizar la evolución de las ventas a lo largo del tiempo
+-Identificar patrones de estacionalidad mensual
+-Determinar los productos y clientes más rentables
+-Evaluar la distribución de ingresos por ciudad
+-Calcular KPIs clave del negocio
+-Optimizar consultas SQL mediante índices y análisis de performance
+
+
+## Estructura del proyecto
+
+analisis-ventas-sql-python/
+│
+├── README.md
+├── reporte.md
+│
+├── sql/
+│ ├── eda.sql # Análisis exploratorio de datos
+│ ├── kpis.sql # Métricas y KPIs del negocio
+│ └── performance.sql # Optimización y análisis de performance
+│
+├── python/
+│ ├── generar_bd.py # Creación y carga de la base de datos
+│ └── analisis.py # Automatización de análisis y gráficos
+│
+└── assets/
+├── ventas_mensuales.png
+├── ingresos_producto.png
+├── ingresos_ciudad.png
+└── clientes_top.png
+
+
+##Análisis realizado
+
+-Exploración del comportamiento de ventas en el tiempo
+-Análisis de estacionalidad mensual
+-Ranking de productos por ingresos
+-Identificación de clientes con mayor aporte económico
+-Distribución de ventas por ciudad
+-Evaluación de ingresos, costos y márgenes
+
+
+##Optimización de performance
+
+-Identificación de consultas costosas
+-Uso de EXPLAIN ANALYZE para análisis de planes de ejecución
+-Comparación entre Seq Scan e Index Scan
+-Creación de índices simples y compuestos
+-Uso de VIEW y MATERIALIZED VIEW para mejorar tiempos de consulta
+
+##Resultados principales
+
+-Las ventas presentan un comportamiento estable con estacionalidad marcada
+-La empresa cuenta con una cartera de clientes diversificada
+-Se identificaron ciudades con alto potencial de crecimiento
+-Existen productos con baja rentabilidad que requieren revisión de costos
+
+##Aprendizajes
+
+-Diferencias prácticas entre tipos de scans en PostgreSQL
+-Impacto real de los índices en el tiempo de ejecución
+-Separación clara entre EDA, KPIs y análisis de performance
+-Integración eficiente de SQL y Python en un flujo de análisis completo
+
+## Cómo ejecutar el proyecto
+1.Crear y cargar la base de datos:
+  python python/generar_bd.py
+2.Ejecutar el análisis y generar gráficos:
+  python python/analisis.py
+3.Ejecutar consultas SQL desde DBeaver utilizando los archivos en la carpeta sql/.
+
+##Este proyecto fue desarrollado por Cristian Camilo Perez Rodriguez como parte de mi portafolio personal enfocado en análisis de datos y optimización de bases de datos.
+
+
+
+
+
+
+

@@ -1,0 +1,84 @@
+# Reporte de Análisis de Ventas
+
+## 1. Contexto del proyecto
+
+Este proyecto tiene como objetivo analizar el comportamiento de las ventas de una empresa ficticia utilizando PostgreSQL para el análisis de datos y Python para la automatización y visualización.
+El análisis busca responder preguntas clave de negocio relacionadas con ingresos, clientes, productos, ciudades y rentabilidad.
+
+## 2. Fuentes de datos
+
+La base de datos está compuesta principalmente por las siguientes tablas:
+
+* **ventas**: registros transaccionales (fecha, ingresos, costos, margen, cliente_id, producto_id)
+* **clientes**: información del cliente (nombre, ciudad)
+* **productos**: catálogo de productos
+
+## 3. Análisis Exploratorio (EDA)
+
+
+### 3.1 Comportamiento de las ventas en el tiempo
+![Ventas mensuales](assets/ventas_mensuales.png)
+
+Las ventas presentan un comportamiento relativamente estable durante el año, con picos en meses específicos y caídas moderadas en otros, lo que indica la presencia de estacionalidad.
+
+
+### 3.2 Estacionalidad
+
+Se identifica una caída aproximada del 20% en febrero y un pico de ventas hacia el último trimestre del año, especialmente en diciembre.
+Esto sugiere oportunidades para campañas de reactivación en los primeros meses del año.
+
+
+### 3.3 Productos con mayores ingresos
+![Top products mas vendidos](assets/productos_mas_vendidos.png)
+
+Los productos **40, 43, 17, 20 y 15** son los principales generadores de ingresos. 
+Sin embargo, la diferencia con otros productos no es extrema, lo que indica un portafolio relativamente balanceado.
+
+
+### 3.4 Clientes que más aportan a los ingresos
+![Top clientes](assets/top_clientes.png)
+
+El cliente **Cliente_2018** es el mayor generador de ingresos. No obstante, la diferencia entre los cinco principales clientes es cercana al 10%, lo que muestra que la empresa no depende de un solo cliente.
+
+
+### 3.5 Distribución de ventas por ciudad
+![Ingresos por ciudad](assets/ventas_por_ciudad.png)
+
+Bogotá, Bucaramanga y Barranquilla concentran los mayores ingresos, con un promedio de 1.030 clientes por ciudad. 
+Cali y Medellín presentan ingresos alrededor de un 12% menores, aunque mantienen una base de clientes relevante.
+
+
+## 4. KPIs Principales
+
+* **Ingresos totales:** suma global de ingresos registrados.
+* **Ingreso promedio por venta:** indicador del valor medio de cada transacción.
+* **Rentabilidad total y promedio:** suma de los márgenes de todas las ventas yrentabilidad promedio por venta.
+* **Top 5 clientes por ingresos:** identifica los 5 mejores clientes con mayor participación en las compras.
+* **Ingresos porcentuales por producto:** porcentaje de contribución de cada producto al total de ingresos.
+* **Cliente más rentable:** identifica el cliente con mayor participación.
+
+## 5. Rentabilidad
+
+Los productos **28, 26, 35, 33 y 19** presentan los peores resultados en términos de rentabilidad. Esto sugiere la necesidad de revisar su estructura de costos o replantear su estrategia comercial.
+
+## 6. Conclusiones
+
+* La empresa presenta ingresos estables con estacionalidad marcada.
+* Existe una cartera de clientes diversificada.
+* Algunas ciudades y productos ofrecen oportunidades claras de crecimiento.
+* La rentabilidad no es homogénea en todo el portafolio.
+
+## 7. Recomendaciones
+
+* Implementar campañas de marketing en meses de baja demanda.
+* Fortalecer la presencia comercial en Cali y Medellín.
+* Revisar costos y precios de los productos menos rentables.
+* Profundizar en el análisis de clientes con alto margen para estrategias de fidelización.
+
+## 8. Herramientas utilizadas
+
+* PostgreSQL
+* Python (pandas, matplotlib, SQLAlchemy)
+* DBeaver
+---
+ Este reporte forma parte de un proyecto de portafolio orientado a análisis de datos y performance en bases de datos.
