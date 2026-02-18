@@ -25,6 +25,7 @@ FROM ventas
 GROUP BY producto_id
 ORDER BY total_ingresos DESC;
 
+
 -- 5. Ingresos por cliente
 SELECT
     cliente_id,

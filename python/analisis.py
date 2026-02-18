@@ -1,9 +1,14 @@
-import os   
+import os
+from dotenv import load_dotenv 
+from sqlalchemy import create_engine
+load_dotenv()
 import pandas as pd
 import matplotlib.pyplot as plt
-from sqlalchemy import create_engine
 
-engine = create_engine("postgresql://postgres:8516203@localhost:5432/empresa_ventas")
+engine = create_engine(
+    f"postgresql://{os.getenv('DB_USER')}:{os.getenv('DB_PASSWORD')}"
+    f"@{os.getenv('DB_HOST')}:{os.getenv('DB_PORT')}/{os.getenv('DB_NAME')}"
+)
 
 os.makedirs("assets", exist_ok=True)
 
