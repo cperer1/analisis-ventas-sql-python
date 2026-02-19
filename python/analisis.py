@@ -1,14 +1,20 @@
 import os
-from dotenv import load_dotenv 
+from dotenv import load_dotenv
 from sqlalchemy import create_engine
-load_dotenv()
 import pandas as pd
 import matplotlib.pyplot as plt
 
+base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+env_path = os.path.join(base_dir, ".env")
+
+load_dotenv(env_path)
+
+# Crea coneccion ala base de datos
 engine = create_engine(
-    f"postgresql://{os.getenv('DB_USER')}:{os.getenv('DB_PASSWORD')}"
+    f"postgresql+psycopg://{os.getenv('DB_USER')}:{os.getenv('DB_PASSWORD')}"
     f"@{os.getenv('DB_HOST')}:{os.getenv('DB_PORT')}/{os.getenv('DB_NAME')}"
 )
+
 
 os.makedirs("assets", exist_ok=True)
 
