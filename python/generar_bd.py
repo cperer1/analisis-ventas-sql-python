@@ -1,11 +1,22 @@
+import os
+from dotenv import load_dotenv
 import pandas as pd
 import numpy as np
 from sqlalchemy import create_engine
 from datetime import datetime, timedelta
 import random
 
+
+base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+env_path = os.path.join(base_dir, ".env")
+
+load_dotenv(env_path)
+
 # Conexión a PostgreSQL
-engine = create_engine("postgresql://postgres:8516203@localhost:5432/empresa_ventas")
+engine = create_engine(
+    f"postgresql+psycopg://{os.getenv('DB_USER')}:{os.getenv('DB_PASSWORD')}"
+    f"@{os.getenv('DB_HOST')}:{os.getenv('DB_PORT')}/{os.getenv('DB_NAME')}"
+    )
 
 # 1. Crear clientes
 num_clientes = 5000
